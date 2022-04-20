@@ -1,8 +1,6 @@
 import telebot
-import requests
-import json
 from config import TOKEN, keys
-from extension import ConvertionException, Convert
+from extension import APIException, Convert
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -36,11 +34,11 @@ def convert(message: telebot.types.Message):
         values = message.text.lower().split()
 
         if len(values) != 3:
-            raise ConvertionException('Количество параметров должно быть равно 3')
+            raise APIException('Количество параметров должно быть равно 3')
 
         quote, base, amount = values
         result = Convert.get_price(quote, base, amount)
-    except ConvertionException as e:
+    except APIException as e:
         bot.send_message(message.chat.id, f'Ошибка пользователя\n{e}')
     except Exception as e:
         bot.send_message(message.chat.id, f'Ошибка\n{e}')
