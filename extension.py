@@ -24,7 +24,7 @@ class Convert:
             raise ConvertionException(f'Не смог обработать валюту "{base}"')
 
         try:
-            amount = int(amount)
+            amount = float(amount)
         except ValueError:
             raise ConvertionException(f'Не смог обработать количество "{amount}"')
 
