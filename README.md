@@ -1,2 +1,3 @@
-Exchange Currency Telegram bot
+Exchange Currency Telegram bot.
+
 Данные берем с https://min-api.cryptocompare.com/
