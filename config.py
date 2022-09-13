@@ -1,5 +1,6 @@
 
-TOKEN = "5208427203:AAGynpkmTpzZLkpku3XDpXSz6CfgFXASd_Q"
+# внести токен
+TOKEN = ""
 
 keys = {
     'биткойн': 'BTC',
